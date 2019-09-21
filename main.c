@@ -148,10 +148,10 @@ int main(void)
 		location = (3 - (int)((uiAnalogData+80)/(4010/3))) + 1;
 
 		if(numbers[3] != 0){
-			TxData[0] = 0x00;//numbers[0];
-			TxData[1] = 0x00;//numbers[1];
-			TxData[2] = 0x00;//numbers[2];
-			TxData[3] = 0x00;//numbers[3];
+			TxData[0] = numbers[0];
+			TxData[1] = numbers[1];
+			TxData[2] = numbers[2];
+			TxData[3] = numbers[3];
 			if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox) != HAL_OK)
 			{
 				Error_Handler();
